@@ -1,0 +1,141 @@
+@import '../../assets/scss/_variables';
+
+section {
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        height: 100px;
+        background: $bg-color-primary;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+        padding: 20px 0;
+        @media screen and (max-width: $screen-md-min) {
+            height: 70px;
+        }
+    
+        nav {
+            display: flex;
+    
+            .left {
+                width: 50%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+    
+                .logo {
+                    width: 145px;
+
+                    @media screen and (max-width: $screen-md-min) {
+                        width: 100px;
+                    }
+                }
+    
+                .searchField {
+                    display: flex;
+                    .search {
+                        width: 300px;
+                        height: 40px;
+    
+                        input {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 0px;
+                            border-right: none;
+                        }
+                    }
+                    button {
+                        display: block;
+                        width: 56px;
+                        height: 40px;
+                        border-radius: 0px 5px 5px 0px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            width: 14px;
+                            height: 14px;
+                        }
+                    }
+
+                    @media screen and (max-width: $screen-md-min) {
+                        display: none;
+                    }
+                }
+            }
+    
+            .right {
+                width: 50%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 30px;
+    
+                a {
+                    font-size: 16px;
+                    color: $color-secondary;
+                    text-decoration: underline;
+                }
+    
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    @media screen and (max-width: $screen-md-min) {
+                        display: none;
+                    }
+    
+                    h4 {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .side-bar {
+        width: 280px;
+        background: $bg-color-primary;
+        position: absolute;
+        overflow: scroll;
+        max-height: 85vh;
+        top: 100px;
+        left: 0;
+
+        @media screen and (max-width: $screen-md-min) {
+            display: none;
+        }
+
+        .link {
+            width: 100%;
+            padding: 15px 25px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+
+            h5 {
+                font-size: 16px;
+            }
+
+            &:hover {
+                background: #39cdcd0c;
+                border-left: 3px solid $button-color-primary;
+            }
+        }
+
+        .nav-option {
+            text-align: left;
+            margin-top: 30px;
+
+            h4 {
+                margin-left: 25px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@import '../../assets/scss/_variables';
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+
+    @media screen and (max-width: $screen-lg-min) {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    @media screen and (max-width: $screen-md-min) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .card {
+        width: 220px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04);
+        padding: 10px 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 160px;
+        border-radius: 4px;
+        background: $bg-color-primary;
+
+        .card-icon {
+            width: 40px;
+        }
+
+        h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+}

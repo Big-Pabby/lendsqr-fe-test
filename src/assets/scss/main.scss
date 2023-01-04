@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+  
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: $font-family-work;
+    background: $bg-color-primary;
+    color: $color-primary;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    width: $container-width-sm;
+    margin: 0 auto;
+}
+
+input, textarea {
+  border: 1px solid $color-secondary;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 100%;
+  background: transparent;
+}
+
+textarea {
+  height: 150px;
+}
+  
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+  color: $color-secondary;
+}
+
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 16px;
+}
+p {
+  font-size: 15px;
+}
+
+.color-gradient {
+    background: -webkit-linear-gradient($color-primary, $color-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+a {
+  color: $button-color-primary;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.btn {
+    width: max-content;
+    display: inline-block;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: linear-gradient(#fcfcfc, #fcfcfc) padding-box,
+      linear-gradient(to right,  $color-primary, $color-secondary) border-box;
+    transition: $transition;
+  
+    &:hover {
+      background: linear-gradient(to right,  $color-primary, $color-secondary);
+      color: #fff;
+      border: none;
+    }
+}
+  
+.btn-primary {
+    background: linear-gradient(to right, $color-primary, $color-secondary);
+    color: #fff;
+    border: none;
+}
+  
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+  
+  /* Media Queries */
+  @media screen and (max-width: $screen-lg-min) {
+    .container1 {
+      width: $container-width-md;
+    }
+  }
+  
+  @media screen and (max-width: $screen-sm-min) {
+    .container {
+      width: $container-width-sm;
+    }
+  }

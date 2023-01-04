@@ -1,0 +1,16 @@
+@import '../../assets/scss/_variables';
+
+section {
+    padding: 50px 0px 50px 50px;
+    margin-left: 280px;
+    background: #f4f4f4;
+    text-align: left;
+    @media screen and (max-width: $screen-md-min) {
+        margin-left: 0;
+        padding: 50px 0px 20px 20px;
+    }
+
+    h2 {
+        margin-bottom: 40px;
+    }
+}
