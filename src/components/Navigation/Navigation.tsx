@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './Navigation.scss'
 import Logo from "../../assets/images/lendLogo.svg"
 import Search from "../../assets/images/search.svg"
@@ -28,6 +28,8 @@ import badgePercent from "../../assets/images/badge-percent.svg"
 import clipboardList from "../../assets/images/clipboard-list.svg"
 
 const Navigation = () => {
+    const [hamburger, setHamburger] = useState<Boolean>(false)
+
     const navOptions = [
         {
             id: 1,
@@ -149,11 +151,20 @@ const Navigation = () => {
         },
     ]
 
+    const hamburgerBtn = () => {
+        setHamburger(!hamburger)
+    }
+
   return (
     <section>
         <header>
             <div className="container">
                 <nav>
+                    <div id="menu-btn" className={hamburger ? 'hamburger open' : 'hamburger'} onClick={() => hamburgerBtn()}>
+                        <span className="hamburger-top"></span>
+                        <span className="hamburger-middle"></span>
+                        <span className="hamburger-bottom"></span>
+                    </div>
                     <div className="left">
                         <div className="logo">
                             <img src={Logo} alt="" />
@@ -166,7 +177,7 @@ const Navigation = () => {
                         </div>
                     </div>
                     <div className="right">
-                        <a href="#">docs</a>
+                        <p>docs</p>
                         <div className="bell">
                             <img src={Bell} alt="" />
                         </div>
@@ -222,6 +233,56 @@ const Navigation = () => {
                 })
             }
         </div>
+        {
+            !hamburger ? null : 
+            <div className="hamburgerMenu">
+                <div className="user">
+                    <div className="avatar">
+                        <img src={Avatar} alt="" />
+                    </div>
+                    <h4>Adedeji</h4>
+                    <div>
+                        <img src={Drop} alt="" />
+                    </div>
+                </div>
+            <div className="link">
+                <div>
+                    <img src={Briefcase} alt="" />
+                </div>
+                <h5>Switch Organization</h5>
+                <div>
+                    <img src={arrowDown} alt="" />
+                </div>
+            </div>
+            <div className="link">
+                <div>
+                    <img src={Home} alt="" />
+                </div>
+                <h5>Dashboard</h5>
+            </div>
+            {
+                navOptions.map((navOption) => {
+                    return (
+                        <div key={navOption.id} className="nav-option">
+                            <h4>{navOption.type}</h4>
+                            {
+                                navOption.typeOptions.map((typeOption) => {
+                                    return(
+                                        <div key={typeOption.id} className="link">
+                                            <div>
+                                                <img src={typeOption.icon} alt="" />
+                                            </div>
+                                            <h5>{typeOption.name}</h5>
+                                        </div>                  
+                                    )
+                                })
+                            }
+                        </div>
+                    )
+                })
+            }
+        </div>
+        }
     </section>
   );
 };

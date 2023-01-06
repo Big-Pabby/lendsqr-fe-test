@@ -1,21 +1,12 @@
 @import '../../assets/scss/_variables';
 
 .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: space-between;
-
-    @media screen and (max-width: $screen-lg-min) {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    @media screen and (max-width: $screen-md-min) {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        align-items: center;
-        justify-items: center;
-    }
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 
     .card {
         width: 220px;

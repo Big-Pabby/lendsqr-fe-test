@@ -17,12 +17,62 @@ section {
     
         nav {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .hamburger {
+                display: none;
+                @media screen and (max-width: $screen-sm-min) {
+                    display: block;
+                    cursor: pointer;
+                    width: 24px;
+                    height: 24px;
+                    transition: all 0.25s;
+                    position: relative;
+
+                    .hamburger-top, .hamburger-middle, .hamburger-bottom {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 24px;
+                        height: 2px;
+                        background: $color-secondary;
+                        transform: rotate(0);
+                        transition: all 0.5s;
+                    }
+
+                    .hamburger-middle {
+                        transform: translateY(7px);
+                    }
+
+                    .hamburger-bottom {
+                        transform: translateY(14px);
+                    }
+                }
+            }
+
+            .open {
+                transform: rotate(90deg);
+                transform: translateY(0px);
+            }
+
+            .open .hamburger-top {
+                transform: rotate(45deg) translateY(6px) translate(6px);
+            }
+
+            .open .hamburger-middle{
+                display: none;
+            }
+
+            .open .hamburger-bottom {
+                transform: rotate(-45deg) translateY(6px) translate(-6px);
+            }
     
             .left {
-                width: 50%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                gap: 150px;
     
                 .logo {
                     width: 145px;
@@ -66,16 +116,18 @@ section {
             }
     
             .right {
-                width: 50%;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 gap: 30px;
     
-                a {
+                p {
                     font-size: 16px;
                     color: $color-secondary;
                     text-decoration: underline;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
     
                 .user {
@@ -98,14 +150,75 @@ section {
     .side-bar {
         width: 280px;
         background: $bg-color-primary;
-        position: absolute;
+        position: fixed;
         overflow: scroll;
         max-height: 85vh;
         top: 100px;
         left: 0;
 
+        .logo {
+            width: 100px;
+            margin: 0 auto;
+        }
+
         @media screen and (max-width: $screen-md-min) {
             display: none;
+        }
+
+        .link {
+            width: 100%;
+            padding: 15px 25px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+
+            h5 {
+                font-size: 16px;
+            }
+
+            &:hover {
+                background: #39cdcd0c;
+                border-left: 3px solid $button-color-primary;
+            }
+        }
+
+        .nav-option {
+            text-align: left;
+            margin-top: 30px;
+
+            h4 {
+                margin-left: 25px;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .hamburgerMenu {
+        width: 60%;
+        background: $bg-color-primary;
+        z-index: 30;
+        position: fixed;
+        overflow: scroll;
+        max-height: 100vh;
+        top: 50px;
+        left: 0;
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+
+            h4 {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: $screen-md-min) {
+            display: block;
         }
 
         .link {
