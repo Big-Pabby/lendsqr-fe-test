@@ -1,5 +1,11 @@
 # Getting Started with Create React App
 
+## Here are the following routes availabe in this project
+
+----/ will take you to the login page
+----/dashboard will take you to the dashboard page where we have the users
+----/userdetails will take you to the user detail page
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,0 +1,55 @@
+@import '../../assets/scss/_variables';
+
+.information {
+    width: 100%;
+    background: $bg-color-primary;
+    margin-top: 50px;
+    padding: 30px;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+
+    .data {
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(33, 63, 125, 0.1);
+        text-align: left;
+        margin-bottom: 20px;
+
+        h4 {
+            color: $color-secondary;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .type {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 30px;
+            word-break: break-all;
+
+            @media screen and (max-width: $screen-lg-min) {
+               grid-template-columns: 1fr 1fr 1fr;
+            }
+            @media screen and (max-width: $screen-md-min) {
+               grid-template-columns: 1fr 1fr 1fr;
+            }
+            @media screen and (max-width: $screen-sm-min) {
+               grid-template-columns: 1fr;
+            }
+
+            h5 {
+                font-size: 12px;
+                color: $color-primary;
+                font-weight: 400;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                height: 30px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+}

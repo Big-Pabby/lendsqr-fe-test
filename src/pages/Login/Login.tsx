@@ -27,7 +27,7 @@ const Login = () => {
               <div className="input">
                 <TextField type="password" placeholder="Password" />
               </div>
-              <a href="#">Forgot PASSWORD?</a>
+              <h4>Forgot PASSWORD?</h4>
               <div className="loginBtn">
                 <PrimaryButton value="log in"/>
               </div>

@@ -151,7 +151,7 @@ section {
         width: 280px;
         background: $bg-color-primary;
         position: fixed;
-        overflow: scroll;
+        overflow-y: scroll;
         max-height: 85vh;
         top: 100px;
         left: 0;
@@ -200,10 +200,11 @@ section {
         background: $bg-color-primary;
         z-index: 30;
         position: fixed;
-        overflow: scroll;
+        overflow-y: scroll;
         max-height: 100vh;
         top: 50px;
         left: 0;
+        display: none;
 
         .user {
             display: flex;

@@ -10,12 +10,14 @@ const UserRow = ({
     email,
     phoneNumber,
     createdAt,
+    id,
 } : {
     orgName: String;
     userName: String;
     email: String;
     phoneNumber: String;
     createdAt: any;
+    id: Boolean;
 }) => {
 
     const [status, setStatus] = useState<String>("Pending")
@@ -61,7 +63,7 @@ const UserRow = ({
             </div>
         </div>
         </td>
-        <DropdownTable active={dropDown} handleBlacklist={() => handleBlackList()} handleActive={() => handleActive()} />
+        <DropdownTable active={dropDown} handleBlacklist={() => handleBlackList()} handleActive={() => handleActive()} id={id} />
     </tr>
   );
 };

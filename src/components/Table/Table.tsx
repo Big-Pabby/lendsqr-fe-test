@@ -97,12 +97,13 @@ const Table = () => {
                   currentPosts.map((data) => {
                     return (
                       <UserRow 
-                        key={data.key}
+                        key={data.id}
                         orgName={data.orgName}
                         userName={data.userName}
                         email={data.email}
                         phoneNumber={data.phoneNumber}
                         createdAt={data.createdAt}
+                        id={data.id}
                       />
                     )
                   })
