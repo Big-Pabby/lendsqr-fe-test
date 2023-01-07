@@ -2,9 +2,9 @@
 
 ## Here are the following routes availabe in this project
 
-----/ will take you to the login page
-----/dashboard will take you to the dashboard page where we have the users
-----/userdetails will take you to the user detail page
+https://victor-adekunle-lendsqr-fe-test.vercel.app will take you to the login page.\
+https://victor-adekunle-lendsqr-fe-test.vercel.app/dashboard will take you to the dashboard page where we have the users.\
+https://victor-adekunle-lendsqr-fe-test.vercel.app/userdetails will take you to the user detail page.\
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
